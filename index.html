@@ -3,231 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SMP TAKHASSUS</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+<title>Video Player</title>
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
 body{
-background:#081323;
-color:white;
-display:flex;
-justify-content:center;
-padding:20px;
+    background:#081323;
+    color:#fff;
+    font-family:Arial,sans-serif;
+    display:flex;
+    justify-content:center;
+    padding:20px;
 }
-
 .container{
-width:100%;
-max-width:420px;
+    max-width:420px;
+    width:100%;
 }
-
-.profile{
-display:flex;
-align-items:center;
-background:#101d35;
-padding:15px;
-border-radius:20px;
-margin-bottom:15px;
+video{
+    width:100%;
+    border-radius:15px;
+    margin-bottom:15px;
 }
-
-.profile img{
-width:70px;
-height:70px;
-border-radius:50%;
-margin-right:15px;
-border:2px solid #4da3ff;
-object-fit:cover;
+select,button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
 }
-
-.profile h2{
-font-size:20px;
-}
-
-.profile p{
-color:#b5c7ff;
-font-size:14px;
-}
-
-.banner{
-margin-bottom:20px;
-}
-
-.banner img{
-width:100%;
-height:190px;
-border-radius:20px;
-object-fit:cover;
-}
-
-.panel{
-background:#101d35;
-padding:20px;
-border-radius:20px;
-}
-
-.panel h2{
-margin-bottom:15px;
-}
-
-select{
-width:100%;
-padding:12px;
-border:none;
-border-radius:10px;
-background:#1b2b4d;
-color:white;
-font-size:16px;
-margin-bottom:15px;
-}
-
 button{
-width:100%;
-padding:14px;
-background:#3b82f6;
-border:none;
-border-radius:12px;
-font-size:16px;
-color:white;
-cursor:pointer;
+    background:#3b82f6;
+    color:#fff;
+    cursor:pointer;
 }
-
-button:hover{
-background:#2563eb;
-}
-
-.bottom{
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-background:#101d35;
-display:flex;
-justify-content:space-around;
-padding:12px 0;
-}
-
-.bottom a{
-color:white;
-text-decoration:none;
-font-size:14px;
-text-align:center;
-}
-
-.bottom i{
-display:block;
-font-size:20px;
-margin-bottom:4px;
-}
-
 </style>
-
 </head>
-
 <body>
 
 <div class="container">
 
-<div class="profile">
+<video id="player" controls autoplay muted playsinline>
+<source src="https://files.catbox.moe/kjo574.mp4" type="video/mp4">
+</video>
 
-<img src="https://files.catbox.moe/9h0poh.jpg">
-
-<div>
-
-<h2>TAK DIKENAL</h2>
-
-<p>Role : GRATIS</p>
-
-<p>Expired : 2028-11-17</p>
-
-</div>
-
-</div>
-
-<div class="banner">
-
-<img id="banner"
-src="https://picsum.photos/800/400">
-
-</div>
-
-<div class="panel">
-
-<h2>VIDEO BOKEP 18+</h2>
-
-<label>Pilih Video</label>
-
-<select id="videoSelect" onchange="gantiBanner()">
-
+<select id="videoSelect">
 <option value="https://files.catbox.moe/kjo574.mp4">Video 1</option>
-
 <option value="https://files.catbox.moe/cbd4nf.mp4">Video 2</option>
-
 <option value="https://files.catbox.moe/i34z2g.mp4">Video 3</option>
-
 <option value="https://files.catbox.moe/wodes6.mp4">Video 4</option>
-
-<option value="https://files.catbox.moe/9wuvgo.mp4">Video 5</option>
-
-<option value="https://files.catbox.moe/9wuvgo.mp4">Video 6</option>
-
-<option value="https://files.catbox.moe/5yy1ks.mp4">Video 7</option>
-
-<option value="https://files.catbox.moe/u28xgu.mp4">Video 8</option>
-
-<option value="https://files.catbox.moe/1ho0jz.mp4">Video 9</option>
-
-<option value="https://files.catbox.moe/wodes6.mp4">Video 10</option>
-
 </select>
 
-<button>OPEN VIDEO</button>
-
-</div>
-
-</div>
-
-<div class="bottom">
-
-<a href="#">
-<i class="fa-solid fa-house"></i>
-Home
-</a>
-
-<a href="#">
-<i class="fa-solid fa-film"></i>
-Video
-</a>
-
-<a href="#">
-<i class="fa-solid fa-screwdriver-wrench"></i>
-Tools
-</a>
-
-<a href="#">
-<i class="fa-solid fa-user"></i>
-Profile
-</a>
+<button onclick="putarVideo()">Putar Video</button>
 
 </div>
 
 <script>
+function putarVideo(){
+    const player=document.getElementById("player");
+    const url=document.getElementById("videoSelect").value;
 
-function gantiBanner(){
-
-let pilih=document.getElementById("videoSelect");
-
-document.getElementById("banner").src=pilih.value;
-
+    player.src=url;
+    player.load();
+    player.play();
 }
 
+document.getElementById("videoSelect").addEventListener("change", putarVideo);
 </script>
 
 </body>
