@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Panel</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#081323;
+color:white;
+display:flex;
+justify-content:center;
+padding:20px;
+}
+
+.container{
+width:100%;
+max-width:420px;
+}
+
+.profile{
+display:flex;
+align-items:center;
+background:#101d35;
+padding:15px;
+border-radius:20px;
+margin-bottom:15px;
+}
+
+.profile img{
+width:70px;
+height:70px;
+border-radius:50%;
+margin-right:15px;
+border:2px solid #4da3ff;
+object-fit:cover;
+}
+
+.profile h2{
+font-size:20px;
+}
+
+.profile p{
+color:#b5c7ff;
+font-size:14px;
+}
+
+.banner{
+margin-bottom:20px;
+}
+
+.banner img{
+width:100%;
+height:190px;
+border-radius:20px;
+object-fit:cover;
+}
+
+.panel{
+background:#101d35;
+padding:20px;
+border-radius:20px;
+}
+
+.panel h2{
+margin-bottom:15px;
+}
+
+select{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#1b2b4d;
+color:white;
+font-size:16px;
+margin-bottom:15px;
+}
+
+button{
+width:100%;
+padding:14px;
+background:#3b82f6;
+border:none;
+border-radius:12px;
+font-size:16px;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#2563eb;
+}
+
+.bottom{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#101d35;
+display:flex;
+justify-content:space-around;
+padding:12px 0;
+}
+
+.bottom a{
+color:white;
+text-decoration:none;
+font-size:14px;
+text-align:center;
+}
+
+.bottom i{
+display:block;
+font-size:20px;
+margin-bottom:4px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="profile">
+
+<img src="https://i.pravatar.cc/150?img=12">
+
+<div>
+
+<h2>Ihsan</h2>
+
+<p>Role : OWNER</p>
+
+<p>Expired : 2028-11-17</p>
+
+</div>
+
+</div>
+
+<div class="banner">
+
+<img id="banner"
+src="https://picsum.photos/800/400">
+
+</div>
+
+<div class="panel">
+
+<h2>🎬 Video Panel</h2>
+
+<label>Pilih Video</label>
+
+<select id="videoSelect" onchange="gantiBanner()">
+
+<option value="https://picsum.photos/id/1015/800/400">Video 1</option>
+
+<option value="https://picsum.photos/id/1025/800/400">Video 2</option>
+
+<option value="https://picsum.photos/id/1035/800/400">Video 3</option>
+
+<option value="https://picsum.photos/id/1045/800/400">Video 4</option>
+
+<option value="https://picsum.photos/id/1055/800/400">Video 5</option>
+
+<option value="https://picsum.photos/id/1065/800/400">Video 6</option>
+
+<option value="https://picsum.photos/id/1075/800/400">Video 7</option>
+
+<option value="https://picsum.photos/id/1084/800/400">Video 8</option>
+
+<option value="https://picsum.photos/id/1080/800/400">Video 9</option>
+
+<option value="https://picsum.photos/id/109/800/400">Video 10</option>
+
+</select>
+
+<button>OPEN VIDEO</button>
+
+</div>
+
+</div>
+
+<div class="bottom">
+
+<a href="#">
+<i class="fa-solid fa-house"></i>
+Home
+</a>
+
+<a href="#">
+<i class="fa-solid fa-film"></i>
+Video
+</a>
+
+<a href="#">
+<i class="fa-solid fa-screwdriver-wrench"></i>
+Tools
+</a>
+
+<a href="#">
+<i class="fa-solid fa-user"></i>
+Profile
+</a>
+
+</div>
+
+<script>
+
+function gantiBanner(){
+
+let pilih=document.getElementById("videoSelect");
+
+document.getElementById("banner").src=pilih.value;
+
+}
+
+</script>
+
+</body>
+</html>
