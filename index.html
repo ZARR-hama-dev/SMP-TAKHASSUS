@@ -57,14 +57,19 @@ font-size:14px;
 color:#b8cbff;
 }
 
+.banner img,
 .banner video{
 width:100%;
 height:210px;
-object-fit:cover;
 border-radius:20px;
-background:#000;
+object-fit:cover;
 border:2px solid #2f7cff;
+background:#000;
 margin-bottom:20px;
+}
+
+#banner{
+display:none;
 }
 
 .panel{
@@ -96,7 +101,7 @@ padding:15px;
 border:none;
 border-radius:12px;
 background:linear-gradient(90deg,#ff2f2f,#2f7cff);
-color:white;
+color:#fff;
 font-size:16px;
 font-weight:bold;
 cursor:pointer;
@@ -116,6 +121,11 @@ border-radius:15px;
 padding:18px;
 text-align:center;
 transition:.3s;
+}
+
+.menu-card:hover{
+transform:scale(1.05);
+border-color:#ff2f2f;
 }
 
 .menu-card i{
@@ -142,7 +152,7 @@ border-top:2px solid #2f7cff;
 }
 
 .bottom a{
-color:white;
+color:#fff;
 text-decoration:none;
 font-size:13px;
 text-align:center;
@@ -154,6 +164,7 @@ font-size:22px;
 margin-bottom:5px;
 }
 </style>
+
 </head>
 
 <body>
@@ -178,9 +189,13 @@ margin-bottom:5px;
 
 <div class="banner">
 
-<video id="banner" controls autoplay muted playsinline>
+<img id="cover"
+src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=1200"
+alt="Cover">
 
-<source src="https://files.catbox.moe/kjo574.mp4" type="video/mp4">
+<video id="banner" controls playsinline>
+
+<source src="" type="video/mp4">
 
 </video>
 
@@ -193,14 +208,23 @@ margin-bottom:5px;
 <label>Pilih Video</label>
 
 <select id="videoSelect">
+
 <option value="https://files.catbox.moe/kjo574.mp4">Video 1</option>
+
 <option value="https://files.catbox.moe/cbd4nf.mp4">Video 2</option>
+
 <option value="https://files.catbox.moe/i34z2g.mp4">Video 3</option>
+
 <option value="https://files.catbox.moe/wodes6.mp4">Video 4</option>
+
 <option value="https://files.catbox.moe/9wuvgo.mp4">Video 5</option>
+
 <option value="https://files.catbox.moe/5yy1ks.mp4">Video 6</option>
+
 <option value="https://files.catbox.moe/u28xgu.mp4">Video 7</option>
+
 <option value="https://files.catbox.moe/1ho0jz.mp4">Video 8</option>
+
 </select>
 
 <button onclick="gantiVideo()">SMP TAKHASSUS VIDEO</button><hr style="margin:25px 0;border:1px solid #333;">
@@ -209,26 +233,105 @@ margin-bottom:5px;
 
 <div class="menu-grid">
 
-<div class="menu-card"><i class="fa-solid fa-image"></i><span>Galeri</span></div>
-<div class="menu-card"><i class="fa-solid fa-video"></i><span>Video</span></div>
-<div class="menu-card"><i class="fa-solid fa-music"></i><span>Musik</span></div>
-<div class="menu-card"><i class="fa-solid fa-folder"></i><span>File</span></div>
-<div class="menu-card"><i class="fa-solid fa-download"></i><span>Download</span></div>
-<div class="menu-card"><i class="fa-solid fa-camera"></i><span>Kamera</span></div>
-<div class="menu-card"><i class="fa-solid fa-book"></i><span>Library</span></div>
-<div class="menu-card"><i class="fa-solid fa-gamepad"></i><span>Game</span></div>
-<div class="menu-card"><i class="fa-solid fa-cloud"></i><span>Cloud</span></div>
-<div class="menu-card"><i class="fa-solid fa-wifi"></i><span>Network</span></div>
-<div class="menu-card"><i class="fa-solid fa-lock"></i><span>Security</span></div>
-<div class="menu-card"><i class="fa-solid fa-terminal"></i><span>Terminal</span></div>
-<div class="menu-card"><i class="fa-solid fa-globe"></i><span>Browser</span></div>
-<div class="menu-card"><i class="fa-solid fa-envelope"></i><span>Pesan</span></div>
-<div class="menu-card"><i class="fa-solid fa-star"></i><span>Favorit</span></div>
-<div class="menu-card"><i class="fa-solid fa-heart"></i><span>Like</span></div>
-<div class="menu-card"><i class="fa-solid fa-user"></i><span>Profile</span></div>
-<div class="menu-card"><i class="fa-solid fa-gear"></i><span>Settings</span></div>
-<div class="menu-card"><i class="fa-solid fa-bell"></i><span>Notifikasi</span></div>
-<div class="menu-card"><i class="fa-solid fa-circle-info"></i><span>About</span></div>
+<div class="menu-card">
+<i class="fa-solid fa-image"></i>
+<span>Galeri</span>
+</div>
+
+<div class="menu-card">
+<i class="fa-solid fa-video"></i>
+<span>Video</span>
+</div>
+
+<div class="menu-card">
+<i class="fa-solid fa-music"></i>
+<span>Musik</span>
+</div>
+
+<div class="menu-card">
+<i class="fa-solid fa-folder"></i>
+<span>File</span>
+</div>
+
+<div class="menu-card">
+<i class="fa-solid fa-download"></i>
+<span>Download</span>
+</div>
+
+<div class="menu-card">
+<i class="fa-solid fa-camera"></i>
+<span>Kamera</span>
+</div>
+
+<div class="menu-card">
+<i class="fa-solid fa-book"></i>
+<span>Library</span>
+</div>
+
+<div class="menu-card">
+<i class="fa-solid fa-gamepad"></i>
+<span>Game</span>
+</div>
+
+<div class="menu-card">
+<i class="fa-solid fa-cloud"></i>
+<span>Cloud</span>
+</div>
+
+<div class="menu-card">
+<i class="fa-solid fa-wifi"></i>
+<span>Network</span>
+</div>
+
+<div class="menu-card">
+<i class="fa-solid fa-lock"></i>
+<span>Security</span>
+</div>
+
+<div class="menu-card">
+<i class="fa-solid fa-terminal"></i>
+<span>Terminal</span>
+</div>
+
+<div class="menu-card">
+<i class="fa-solid fa-globe"></i>
+<span>Browser</span>
+</div>
+
+<div class="menu-card">
+<i class="fa-solid fa-envelope"></i>
+<span>Pesan</span>
+</div>
+
+<div class="menu-card">
+<i class="fa-solid fa-star"></i>
+<span>Favorit</span>
+</div>
+
+<div class="menu-card">
+<i class="fa-solid fa-heart"></i>
+<span>Like</span>
+</div>
+
+<div class="menu-card">
+<i class="fa-solid fa-user"></i>
+<span>Profile</span>
+</div>
+
+<div class="menu-card">
+<i class="fa-solid fa-gear"></i>
+<span>Settings</span>
+</div>
+
+<div class="menu-card">
+<i class="fa-solid fa-bell"></i>
+<span>Notifikasi</span>
+</div>
+
+<div class="menu-card">
+<i class="fa-solid fa-circle-info"></i>
+<span>About</span>
+</div>
 
 </div>
 
@@ -260,25 +363,22 @@ Profile
 
   </div><script>
 
-function gantiVideo() {
-
 const player = document.getElementById("banner");
+const cover = document.getElementById("cover");
+
+function gantiVideo(){
+
 const url = document.getElementById("videoSelect").value;
+
+cover.style.display = "none";
+player.style.display = "block";
 
 player.src = url;
 player.load();
 
-player.play().catch(function(err){
-    console.log("Video tidak bisa diputar otomatis:", err);
-});
-
 }
 
-document.getElementById("videoSelect").addEventListener("change", gantiVideo);
-
-window.onload = function(){
-    gantiVideo();
-};
+document.getElementById("videoSelect").addEventListener("change",gantiVideo);
 
 </script>
 
