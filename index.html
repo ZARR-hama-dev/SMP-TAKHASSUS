@@ -16,26 +16,26 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:linear-gradient(180deg,#050505,#0b1735,#2b0606);
+background:linear-gradient(180deg,#050505,#09152c,#330909);
 color:#fff;
 padding:20px;
 padding-bottom:90px;
 }
 
 .container{
-max-width:420px;
+max-width:430px;
 margin:auto;
 }
 
 .profile{
 display:flex;
 align-items:center;
-background:#121212;
-border:1px solid #2f7cff;
-border-radius:20px;
+background:#10131d;
 padding:15px;
-box-shadow:0 0 20px rgba(47,124,255,.2);
-margin-bottom:20px;
+border-radius:20px;
+border:1px solid #2f7cff;
+box-shadow:0 0 15px rgba(47,124,255,.25);
+margin-bottom:18px;
 }
 
 .profile img{
@@ -43,23 +43,23 @@ width:70px;
 height:70px;
 border-radius:50%;
 margin-right:15px;
-border:3px solid #ff3030;
+border:2px solid #ff2f2f;
 object-fit:cover;
 }
 
 .profile h2{
-font-size:22px;
+font-size:21px;
 margin-bottom:5px;
 }
 
 .profile p{
 font-size:14px;
-color:#c9d5ff;
+color:#b8cbff;
 }
 
 .banner video{
 width:100%;
-height:220px;
+height:210px;
 object-fit:cover;
 border-radius:20px;
 background:#000;
@@ -68,31 +68,26 @@ margin-bottom:20px;
 }
 
 .panel{
-background:#121212;
-border-radius:20px;
+background:#10131d;
 padding:20px;
-border:1px solid #ff3030;
-box-shadow:0 0 20px rgba(255,48,48,.2);
+border-radius:20px;
+border:1px solid #ff2f2f;
+box-shadow:0 0 15px rgba(255,47,47,.25);
 }
 
 .panel h2{
 margin-bottom:15px;
 }
 
-.panel label{
-display:block;
-margin-bottom:10px;
-}
-
 select{
 width:100%;
-padding:14px;
-border-radius:12px;
-border:none;
-background:#1b1b1b;
+padding:13px;
+background:#1d1d1d;
 color:#fff;
+border:none;
+border-radius:12px;
+margin-top:10px;
 margin-bottom:15px;
-font-size:16px;
 }
 
 button{
@@ -100,15 +95,38 @@ width:100%;
 padding:15px;
 border:none;
 border-radius:12px;
-background:linear-gradient(90deg,#ff2d2d,#2f7cff);
-color:#fff;
-font-size:17px;
-cursor:pointer;
+background:linear-gradient(90deg,#ff2f2f,#2f7cff);
+color:white;
+font-size:16px;
 font-weight:bold;
+cursor:pointer;
 }
 
-button:hover{
-opacity:.9;
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+margin-top:20px;
+}
+
+.menu-card{
+background:#181818;
+border:1px solid #2f7cff;
+border-radius:15px;
+padding:18px;
+text-align:center;
+transition:.3s;
+}
+
+.menu-card i{
+display:block;
+font-size:28px;
+margin-bottom:10px;
+color:#2f7cff;
+}
+
+.menu-card span{
+font-size:14px;
 }
 
 .bottom{
@@ -124,8 +142,8 @@ border-top:2px solid #2f7cff;
 }
 
 .bottom a{
+color:white;
 text-decoration:none;
-color:#fff;
 font-size:13px;
 text-align:center;
 }
@@ -133,7 +151,7 @@ text-align:center;
 .bottom i{
 display:block;
 font-size:22px;
-margin-bottom:4px;
+margin-bottom:5px;
 }
 </style>
 </head>
@@ -143,25 +161,36 @@ margin-bottom:4px;
 <div class="container">
 
 <div class="profile">
+
 <img src="https://files.catbox.moe/9h0poh.jpg">
+
 <div>
+
 <h2>TAK DIKENAL</h2>
-<p>STATUS : FREE </p>
-<p>DI BUAT OLEH : MAS MAS</p>
+
+<p>Role : GRATIS</p>
+
+<p>Expired : 2028-11-17</p>
+
 </div>
+
 </div>
 
 <div class="banner">
+
 <video id="banner" controls autoplay muted playsinline>
+
 <source src="https://files.catbox.moe/kjo574.mp4" type="video/mp4">
+
 </video>
+
 </div>
 
 <div class="panel">
 
-<h2>📹 Video SMP TAKHASSUS</h2>
+<h2>🎬 SMP TAKHASSUS VIDEO</h2>
 
-<label>SMP TAKHASSUS Video</label>
+<label>Pilih Video</label>
 
 <select id="videoSelect">
 <option value="https://files.catbox.moe/kjo574.mp4">Video 1</option>
@@ -174,7 +203,35 @@ margin-bottom:4px;
 <option value="https://files.catbox.moe/1ho0jz.mp4">Video 8</option>
 </select>
 
-<button onclick="gantiVideo()">SMP TAKHASSUS VIDEO</button>
+<button onclick="gantiVideo()">SMP TAKHASSUS VIDEO</button><hr style="margin:25px 0;border:1px solid #333;">
+
+<h2>📂 MENU</h2>
+
+<div class="menu-grid">
+
+<div class="menu-card"><i class="fa-solid fa-image"></i><span>Galeri</span></div>
+<div class="menu-card"><i class="fa-solid fa-video"></i><span>Video</span></div>
+<div class="menu-card"><i class="fa-solid fa-music"></i><span>Musik</span></div>
+<div class="menu-card"><i class="fa-solid fa-folder"></i><span>File</span></div>
+<div class="menu-card"><i class="fa-solid fa-download"></i><span>Download</span></div>
+<div class="menu-card"><i class="fa-solid fa-camera"></i><span>Kamera</span></div>
+<div class="menu-card"><i class="fa-solid fa-book"></i><span>Library</span></div>
+<div class="menu-card"><i class="fa-solid fa-gamepad"></i><span>Game</span></div>
+<div class="menu-card"><i class="fa-solid fa-cloud"></i><span>Cloud</span></div>
+<div class="menu-card"><i class="fa-solid fa-wifi"></i><span>Network</span></div>
+<div class="menu-card"><i class="fa-solid fa-lock"></i><span>Security</span></div>
+<div class="menu-card"><i class="fa-solid fa-terminal"></i><span>Terminal</span></div>
+<div class="menu-card"><i class="fa-solid fa-globe"></i><span>Browser</span></div>
+<div class="menu-card"><i class="fa-solid fa-envelope"></i><span>Pesan</span></div>
+<div class="menu-card"><i class="fa-solid fa-star"></i><span>Favorit</span></div>
+<div class="menu-card"><i class="fa-solid fa-heart"></i><span>Like</span></div>
+<div class="menu-card"><i class="fa-solid fa-user"></i><span>Profile</span></div>
+<div class="menu-card"><i class="fa-solid fa-gear"></i><span>Settings</span></div>
+<div class="menu-card"><i class="fa-solid fa-bell"></i><span>Notifikasi</span></div>
+<div class="menu-card"><i class="fa-solid fa-circle-info"></i><span>About</span></div>
+
+</div>
+
 </div>
 
 </div>
@@ -201,23 +258,27 @@ Tools
 Profile
 </a>
 
-</div>
+  </div><script>
 
-<script>
+function gantiVideo() {
 
-function gantiVideo(){
+const player = document.getElementById("banner");
+const url = document.getElementById("videoSelect").value;
 
-const player=document.getElementById("banner");
-const url=document.getElementById("videoSelect").value;
-
-player.src=url;
+player.src = url;
 player.load();
 
-player.play().catch(()=>{});
+player.play().catch(function(err){
+    console.log("Video tidak bisa diputar otomatis:", err);
+});
 
 }
 
-document.getElementById("videoSelect").addEventListener("change",gantiVideo);
+document.getElementById("videoSelect").addEventListener("change", gantiVideo);
+
+window.onload = function(){
+    gantiVideo();
+};
 
 </script>
 
